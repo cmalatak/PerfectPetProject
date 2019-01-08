@@ -1,0 +1,35 @@
+body {
+    margin-left: 25px
+}
+
+.question-one-images {
+    display: inline-block;
+}
+
+.question-one-inputs {
+    display: inline-block
+}
+
+.first-question {
+    color: darkred;
+}
+
+.question-two-inputs {
+    display: inline-block
+}
+
+.second-question {
+    color: darkblue;
+}
+
+.question-three-inputs {
+    display: inline-block
+}
+
+.third-question {
+    color: darkgoldenrod;
+}
+
+#submit {
+    margin: 20px
+}
