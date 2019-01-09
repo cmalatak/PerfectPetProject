@@ -1,10 +1,33 @@
 // Don't pollute the global scope
 {
+    const questionOne = document.getElementsByName('answer-one');
+    const questionTwo = document.getElementsByName('answer-two');
+    const questionThree = document.getElementsByName('answer-three');
+    const questions = [questionOne, questionTwo, questionThree];
+
     const formEl = document.querySelector('form');
     formEl.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(event);
+
+        if(true) {
+            console.log('show pet');
+        } else {
+            alert("you didn't answer all the questions, dummy");
+        }
     })
+
+    debugger;
+
+    const isFormValid = questions => {
+        let formIsValid = false;
+        for (let i=0; i<questions.length; i++){
+            const question = questions[i]
+            for(let j=0; j<question.length; j++){
+                isQuestionAnswered(question)
+            }
+        } 
+    }
 
     const perfectPet = () => {
         const question1Answer = () => {
@@ -23,7 +46,7 @@
             const x = parseInt(question1Answer);
             const y = parseInt(question2Answer);
             const z = parseInt(question3Answer);
-        if parseInt(finalScore) <= 16 {
+        if (parseInt(finalScore) <= 16) {
             let perfectPet = "Cat!"
             console.log('Your perfect pet is a...')
             console.log(perfectPet)
