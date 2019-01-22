@@ -58,5 +58,5 @@
     //         console.log('Your perfect pet is a...')
     //         console.log(perfectPet)
     //     }
-    // }
+    }
 }
