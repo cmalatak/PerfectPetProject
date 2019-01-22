@@ -5,6 +5,8 @@
     const questionThree = document.getElementsByName('answer-three');
     const questions = [questionOne, questionTwo, questionThree];
 
+    const input = document.querySelector('input');
+
     const formEl = document.querySelector('form');
     formEl.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -19,15 +21,26 @@
 
     debugger;
 
+    const isQuestionAnswered = () => {
+        for (let k=0; k<input; k++){
+            input[k].checked === true;
+            if (true) {
+                console.log('This is the answer');
+            } //else k++ here instead?
+        }
+    }
+
     const isFormValid = questions => {
-        let formIsValid = false;
+        const formIsValid = false;
         for (let i=0; i<questions.length; i++){
-            const question = questions[i]
-            for(let j=0; j<question.length; j++){
-                isQuestionAnswered(question)
+            const question = questions[i];
+            for(let j=0; j<question; j++){
+                isQuestionAnswered(question);
             }
         } 
+        return formIsValid;
     }
+
 
     const perfectPet = () => {
         const question1Answer = () => {
