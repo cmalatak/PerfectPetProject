@@ -1,33 +1,22 @@
 body {
-    margin-left: 25px
+    margin-left: 25px;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .question-one-images {
-    display: inline-block;
+    display: block;
 }
 
 .question-one-inputs {
-    display: inline-block
-}
-
-.first-question {
-    color: darkred;
+    display: block;
 }
 
 .question-two-inputs {
-    display: inline-block
-}
-
-.second-question {
-    color: darkblue;
+    display: block
 }
 
 .question-three-inputs {
-    display: inline-block
-}
-
-.third-question {
-    color: darkgoldenrod;
+    display: block
 }
 
 #submit {
