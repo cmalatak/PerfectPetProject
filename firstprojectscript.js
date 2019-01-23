@@ -5,44 +5,39 @@
     const questionThree = document.getElementsByName('answer-three');
     const questions = [questionOne, questionTwo, questionThree];
 
-    const input = document.querySelector('input');
+    const choice = document.querySelector('input');
 
     const formEl = document.querySelector('form');
     formEl.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(event);
-
+        console.log(questions)
+        isFormValid(questions)
         if(true) {
             console.log('show pet');
         } else {
             alert("you didn't answer all the questions, dummy");
         }
     })
-
-    debugger;
-
     const isQuestionAnswered = () => {
-        for (let k=0; k<input; k++){
-            input[k].checked === true;
-            if (true) {
-                console.log(`${input[k]} is the answer to ${question[j]}`);
-                //Add an indicator depending on which input is the true one...
-                // const answerValue[j] = k ?
+        for (let k=0; k <choice.length; k++){         
+            if (choice[k].checked) {
+                checked = true;
+                console.log(`${choice[k]} is the answer to ${question[j]}`);
             }
         }
     }
 
     const isFormValid = questions => {
         const formIsValid = false;
-        for (let i=0; i<questions.length; i++){
+        for (let i=0; i <questions.length; i++){
             const question = questions[i];
-            for(let j=0; j<question; j++){
+            for(let j=0; j <question.length; j++){
                 isQuestionAnswered(question);
             }
         } 
         return formIsValid;
     }
-
 
     const perfectPet = () => {
     //     const finalScore = (answerValues);
