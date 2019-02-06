@@ -12,31 +12,40 @@
         event.preventDefault();
         console.log(event);
         console.log(questions)
-        isFormValid(questions)
-        if(true) {
+        console.log('all questions are answered: ', areAllQuestionsAnswered(questions))
+
+        if(areAllQuestionsAnswered(questions)) {
             console.log('show pet');
         } else {
             alert("you didn't answer all the questions, dummy");
         }
     })
-    const isQuestionAnswered = () => {
-        for (let k=0; k <choice.length; k++){         
-            if (choice[k].checked) {
-                checked = true;
-                console.log(`${choice[k]} is the answer to ${question[j]}`);
+    const isQuestionAnswered = (question) => {
+        for (let i=0; i < question.length; i++){ 
+            const option = question[i];
+       
+            if (option.checked) {
+                console.log(`${option} is the answer to ${question}`);
+                return true
             }
         }
+        return false;
     }
 
-    const isFormValid = questions => {
-        const formIsValid = false;
-        for (let i=0; i <questions.length; i++){
+    const areAllQuestionsAnswered = questions => {
+        const numOfQuestions = questions.length;
+
+        let counter = 0;
+
+        for (let i=0; i < questions.length; i++) {
             const question = questions[i];
-            for(let j=0; j <question.length; j++){
-                isQuestionAnswered(question);
+            
+            if(isQuestionAnswered(question)) {
+                counter += 1;
             }
-        } 
-        return formIsValid;
+        }
+
+        return numOfQuestions === counter;
     }
 
     const perfectPet = () => {
