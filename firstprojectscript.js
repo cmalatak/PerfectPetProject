@@ -5,21 +5,51 @@
     const questionThree = document.getElementsByName('answer-three');
     const questions = [questionOne, questionTwo, questionThree];
 
-    const choice = document.querySelector('input');
+    const scoreAnswers = question => {
+        return question.map((answer, i) => {
+            return {
+                score: i,
+                el: answer
+            }
+        });
+    }
+
+    const questionsWithScoredAnswers = questions => {
+        debugger;
+        return questions.map(question => {
+            scoreAnswers(question);
+        })
+    }
+
+    const getScoredAnswersToQuestions = questions => {
+        return questions.map(question => {
+            question.forEach(scoredAnswer => {
+                if(scoredAnswers.el.checked) {
+                    return scoredAnswer;
+                }
+            })
+        })
+    }
 
     const formEl = document.querySelector('form');
+
     formEl.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(event);
         console.log(questions)
         console.log('all questions are answered: ', areAllQuestionsAnswered(questions))
 
+
         if(areAllQuestionsAnswered(questions)) {
+            const scoredAnswers = getScoredAnswersToQuestions(questionsWithScoredAnswers(questions))
+            const questionsBruh = questionsWithScoredAnswers(questions)
+            debugger;
             console.log('show pet');
         } else {
             alert("you didn't answer all the questions, dummy");
         }
     })
+
     const isQuestionAnswered = (question) => {
         for (let i=0; i < question.length; i++){ 
             const option = question[i];
