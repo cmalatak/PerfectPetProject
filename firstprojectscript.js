@@ -6,7 +6,9 @@
     const questions = [questionOne, questionTwo, questionThree];
 
     const scoreAnswers = question => {
-        return question.map((answer, i) => {
+        const questionArray = [Array.from(question)];
+        //return question.map((answer, i) => {
+        return questionArray.map((answer, i) => {
             return {
                 score: i,
                 el: answer
@@ -15,7 +17,6 @@
     }
 
     const questionsWithScoredAnswers = questions => {
-        debugger;
         return questions.map(question => {
             scoreAnswers(question);
         })
@@ -23,7 +24,9 @@
 
     const getScoredAnswersToQuestions = questions => {
         return questions.map(question => {
-            question.forEach(scoredAnswer => {
+            debugger;
+            const questionArray = [Array.from(question)];
+            questionArray.forEach(scoredAnswer => {
                 if(scoredAnswers.el.checked) {
                     return scoredAnswer;
                 }
