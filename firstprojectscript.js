@@ -1,42 +1,46 @@
 // Don't pollute the global scope
 {
-    const questionOne = document.getElementsByName('answer-one');
-    const questionTwo = document.getElementsByName('answer-two');
-    const questionThree = document.getElementsByName('answer-three');
+    const questionOne = document.getElementsByName('question-one-choice');
+    const questionTwo = document.getElementsByName('question-two-choice');
+    const questionThree = document.getElementsByName('question-three-choice');
     const questions = [questionOne, questionTwo, questionThree];
+
+    debugger;
 
     const scoreAnswers = question => {
         const questionArray = [Array.from(question)];
         //return question.map((answer, i) => {
-        return questionArray.map((answer, i) => {
+        return questionArray.map((q, i) => {
             return {
-                score: i,
-                el: answer
+                score: i + 1,
+                el: q
             }
         });
     }
 
     const questionsWithScoredAnswers = questions => {
         return questions.map(question => {
-            scoreAnswers(question);
+            const afterScoreAnswers = scoreAnswers(question);
+            debugger;
+            return scoreAnswers(question);
         })
     }
 
     const getScoredAnswersToQuestions = questions => {
         return questions.map(question => {
+            // const questionArray = [Array.from(question)];
             debugger;
-            const questionArray = [Array.from(question)];
-            questionArray.forEach(scoredAnswer => {
-                if(scoredAnswers.el.checked) {
-                    return scoredAnswer;
-                }
-            })
+            // questionArray.forEach(scoredAnswer => {
+            //     if(scoredAnswers.el.checked) {
+            //         return scoredAnswer;
+            //     }
+            // })
         })
     }
 
-    const formEl = document.querySelector('form');
+    /////// SETUP /////////
 
-    formEl.addEventListener('submit', (event) => {
+    const handleQuizSubmit = event => {
         event.preventDefault();
         console.log(event);
         console.log(questions)
@@ -45,13 +49,23 @@
 
         if(areAllQuestionsAnswered(questions)) {
             const scoredAnswers = getScoredAnswersToQuestions(questionsWithScoredAnswers(questions))
+
             const questionsBruh = questionsWithScoredAnswers(questions)
             debugger;
             console.log('show pet');
         } else {
             alert("you didn't answer all the questions, dummy");
         }
-    })
+    }
+
+    const formEl = document.querySelector('form');
+
+    formEl.addEventListener('submit', handleQuizSubmit)
+
+    //////////////////////////
+
+
+    ////// VALIDATION ////////
 
     const isQuestionAnswered = (question) => {
         for (let i=0; i < question.length; i++){ 
@@ -80,6 +94,8 @@
 
         return numOfQuestions === counter;
     }
+
+    ////////////////
 
     const perfectPet = () => {
     //     const finalScore = (answerValues);
