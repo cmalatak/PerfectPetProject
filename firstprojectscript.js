@@ -7,6 +7,8 @@
 
     debugger;
 
+    //////// SCORE /////////
+
     const scoreAnswers = question => {
         const questionArray = [Array.from(question)];
         //return question.map((answer, i) => {
@@ -38,7 +40,10 @@
         })
     }
 
-    /////// SETUP /////////
+    ///////////////////////
+
+
+    /////// SUBMISSION /////////
 
     const handleQuizSubmit = event => {
         event.preventDefault();
@@ -57,6 +62,10 @@
             alert("you didn't answer all the questions, dummy");
         }
     }
+    //////////////////////////
+
+
+    //////// SETUP /////////
 
     const formEl = document.querySelector('form');
 
@@ -102,7 +111,7 @@
     //         const x = parseInt(question1Answer);
     //         const y = parseInt(question2Answer);
     //         const z = parseInt(question3Answer);
-    //     if (parseInt(finalScore) <= 16) {
+    //     if (parseInt(finalScore) <= 7) {
     //         let perfectPet = "Cat!"
     //         console.log('Your perfect pet is a...')
     //         console.log(perfectPet)
