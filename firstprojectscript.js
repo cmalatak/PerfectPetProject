@@ -1,63 +1,58 @@
 // Don't pollute the global scope
 {
-    const questionOne = document.getElementsByName('question-one-choice');
-    const questionTwo = document.getElementsByName('question-two-choice');
-    const questionThree = document.getElementsByName('question-three-choice');
-    const questions = [questionOne, questionTwo, questionThree];
+    //////// SETUP /////////
+    const questionOneChoices = Array.from(document.getElementsByName('question-one-choice'));
+    const questionTwoChoices = Array.from(document.getElementsByName('question-two-choice'));
+    const questionThreeChoices = Array.from(document.getElementsByName('question-three-choice'));
+    const questions = [questionOneChoices, questionTwoChoices, questionThreeChoices];
 
-    debugger;
-
-    //////// SCORE /////////
-
-    const scoreAnswers = question => {
-        const questionArray = [Array.from(question)];
-        //return question.map((answer, i) => {
-        return questionArray.map((q, i) => {
-            return {
-                score: i + 1,
-                el: q
-            }
+    const getQuestionsWithScoredChoices = questions => {
+        return questions.map((questionChoices, i) => {
+            return questionChoices.map((choice, i) => {
+                return {
+                    choice: choice,
+                    score: i + 1,
+                }
+            })
         });
     }
 
-    const questionsWithScoredAnswers = questions => {
-        return questions.map(question => {
-            const afterScoreAnswers = scoreAnswers(question);
-            debugger;
-            return scoreAnswers(question);
-        })
+    const getSelectedChoices = (questions) => {
+        const selectedChoices = [];
+
+        for (let i=0; i < questions.length; i++) {
+            const questionChoices = questions[i];
+
+            for (let j=0; j < questionChoices.length; j++) {
+                if(questionChoices[j].choice.checked) {
+                    selectedChoices.push(questionChoices[j]);
+                }
+            }
+        }
+        return selectedChoices;
     }
 
-    const getScoredAnswersToQuestions = questions => {
-        return questions.map(question => {
-            // const questionArray = [Array.from(question)];
-            debugger;
-            // questionArray.forEach(scoredAnswer => {
-            //     if(scoredAnswers.el.checked) {
-            //         return scoredAnswer;
-            //     }
-            // })
-        })
+    const addScoresForSelectedChoices = (selectedChoicesWithScores) => {
+        let totalScore = 0
+
+        for (let i=0; i < selectedChoicesWithScores.length; i++) {
+            const selectedChoiceWithScore = selectedChoicesWithScores[i]
+
+            totalScore += selectedChoiceWithScore.score;
+        }
+        return totalScore;
     }
-
-    ///////////////////////
-
 
     /////// SUBMISSION /////////
 
     const handleQuizSubmit = event => {
         event.preventDefault();
-        console.log(event);
-        console.log(questions)
-        console.log('all questions are answered: ', areAllQuestionsAnswered(questions))
-
 
         if(areAllQuestionsAnswered(questions)) {
-            const scoredAnswers = getScoredAnswersToQuestions(questionsWithScoredAnswers(questions))
+            const questionsWithScoredChoices = getQuestionsWithScoredChoices(questions)
+            const selectedChoicesWithScores = getSelectedChoices(questionsWithScoredChoices)
+            const addedScoresForSelectedChoices = addScoresForSelectedChoices(selectedChoicesWithScores)
 
-            const questionsBruh = questionsWithScoredAnswers(questions)
-            debugger;
-            console.log('show pet');
         } else {
             alert("you didn't answer all the questions, dummy");
         }
