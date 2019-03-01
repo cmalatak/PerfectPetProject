@@ -1,10 +1,11 @@
 // Don't pollute the global scope
 {
-    //////// SETUP /////////
     const questionOneChoices = Array.from(document.getElementsByName('question-one-choice'));
     const questionTwoChoices = Array.from(document.getElementsByName('question-two-choice'));
     const questionThreeChoices = Array.from(document.getElementsByName('question-three-choice'));
     const questions = [questionOneChoices, questionTwoChoices, questionThreeChoices];
+
+    const submitButtonElement = document.getElementById("submit")
 
     const getQuestionsWithScoredChoices = questions => {
         return questions.map((questionChoices, i) => {
@@ -32,6 +33,30 @@
         return selectedChoices;
     }
 
+    const determinePetBasedOnScore = (addedScoresForSelectedChoices) => {
+        console.log('Your perfect pet is a...');
+        let perfectPet;
+        console.log(`this is a test ${perfectPet}`)
+        if (addedScoresForSelectedChoices <= 7) {
+            perfectPet = 'Cat';
+            console.log(`${perfectPet}!`);
+            const catImageURL = 'http://spcasuncoast.org/wp-content/uploads/2017/02/success_cat.png';
+            const catImageElement = document.createElement('img');
+            catImageElement.setAttribute('src', catImageURL);
+            catImageElement.setAttribute('class', 'cat-pic');
+            document.body.insertBefore(catImageElement, submitButtonElement);
+        } else {
+            perfectPet = 'Dog';
+            console.log(`${perfectPet}!`);
+            const dogImageURL = 'https://c7.uihere.com/files/151/264/946/golden-retriever-puppy-pomeranian-pet-sitting-nova-scotia-duck-tolling-retriever-golden-retriever-thumb.jpg';
+            const dogImageElement = document.createElement('img');
+            dogImageElement.setAttribute('src', dogImageURL);
+            dogImageElement.setAttribute('class', 'cat-pic');
+            document.body.insertBefore(dogImageElement, submitButtonElement);
+        }
+    
+    }
+
     const addScoresForSelectedChoices = (selectedChoicesWithScores) => {
         let totalScore = 0
 
@@ -42,7 +67,7 @@
         }
         return totalScore;
     }
-
+    
     /////// SUBMISSION /////////
 
     const handleQuizSubmit = event => {
@@ -52,11 +77,12 @@
             const questionsWithScoredChoices = getQuestionsWithScoredChoices(questions)
             const selectedChoicesWithScores = getSelectedChoices(questionsWithScoredChoices)
             const addedScoresForSelectedChoices = addScoresForSelectedChoices(selectedChoicesWithScores)
-
+            determinePetBasedOnScore(addedScoresForSelectedChoices)
         } else {
             alert("you didn't answer all the questions, dummy");
         }
     }
+
     //////////////////////////
 
 
@@ -98,22 +124,5 @@
 
         return numOfQuestions === counter;
     }
-
-    ////////////////
-
-    const perfectPet = () => {
-    //     const finalScore = (answerValues);
-    //         const x = parseInt(question1Answer);
-    //         const y = parseInt(question2Answer);
-    //         const z = parseInt(question3Answer);
-    //     if (parseInt(finalScore) <= 7) {
-    //         let perfectPet = "Cat!"
-    //         console.log('Your perfect pet is a...')
-    //         console.log(perfectPet)
-    //     } else {
-    //         let perfectPet = "Dog!"
-    //         console.log('Your perfect pet is a...')
-    //         console.log(perfectPet)
-    //     }
-    }
+    ///////////////////////////
 }
