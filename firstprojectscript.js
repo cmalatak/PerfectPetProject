@@ -36,23 +36,22 @@
     const determinePetBasedOnScore = (addedScoresForSelectedChoices) => {
         console.log('Your perfect pet is a...');
         let perfectPet;
-        console.log(`this is a test ${perfectPet}`)
         if (addedScoresForSelectedChoices <= 7) {
             perfectPet = 'Cat';
             console.log(`${perfectPet}!`);
-            const catImageURL = 'http://spcasuncoast.org/wp-content/uploads/2017/02/success_cat.png';
-            const catImageElement = document.createElement('img');
-            catImageElement.setAttribute('src', catImageURL);
-            catImageElement.setAttribute('class', 'cat-pic');
-            document.body.insertBefore(catImageElement, submitButtonElement);
+            // const catImageURL = 'http://spcasuncoast.org/wp-content/uploads/2017/02/success_cat.png';
+            // const catImageElement = document.createElement('img');
+            // catImageElement.setAttribute('src', catImageURL);
+            // catImageElement.setAttribute('class', 'cat-pic');
+            // document.body.insertBefore(catImageElement, submitButtonElement);
         } else {
             perfectPet = 'Dog';
             console.log(`${perfectPet}!`);
-            const dogImageURL = 'https://c7.uihere.com/files/151/264/946/golden-retriever-puppy-pomeranian-pet-sitting-nova-scotia-duck-tolling-retriever-golden-retriever-thumb.jpg';
-            const dogImageElement = document.createElement('img');
-            dogImageElement.setAttribute('src', dogImageURL);
-            dogImageElement.setAttribute('class', 'cat-pic');
-            document.body.insertBefore(dogImageElement, submitButtonElement);
+            // const dogImageURL = 'https://c7.uihere.com/files/151/264/946/golden-retriever-puppy-pomeranian-pet-sitting-nova-scotia-duck-tolling-retriever-golden-retriever-thumb.jpg';
+            // const dogImageElement = document.createElement('img');
+            // dogImageElement.setAttribute('src', dogImageURL);
+            // dogImageElement.setAttribute('class', 'cat-pic');
+            // document.body.insertBefore(dogImageElement, submitButtonElement);
         }
     
     }
