@@ -7,6 +7,20 @@
 
     const submitButtonElement = document.getElementById("submit")
 
+    ////// SHOW CAT IMAGE //////
+    const showCat = () => {
+        const catImageElement = document.querySelector(".cat-img");
+        catImageElement.setAttribute('style','width: 400px');
+    }
+    ///////////////////////
+
+    /////// SHOW DOG IMAGE ///////
+    const showDog = () => {
+        const dogImageElement = document.querySelector(".dog-img");
+        dogImageElement.setAttribute('style','width: 400px');
+    }
+    ///////////////////////    
+
     const getQuestionsWithScoredChoices = questions => {
         return questions.map((questionChoices, i) => {
             return questionChoices.map((choice, i) => {
@@ -39,19 +53,11 @@
         if (addedScoresForSelectedChoices <= 7) {
             perfectPet = 'Cat';
             console.log(`${perfectPet}!`);
-            // const catImageURL = 'http://spcasuncoast.org/wp-content/uploads/2017/02/success_cat.png';
-            // const catImageElement = document.createElement('img');
-            // catImageElement.setAttribute('src', catImageURL);
-            // catImageElement.setAttribute('class', 'cat-pic');
-            // document.body.insertBefore(catImageElement, submitButtonElement);
+            showCat();
         } else {
             perfectPet = 'Dog';
             console.log(`${perfectPet}!`);
-            // const dogImageURL = 'https://c7.uihere.com/files/151/264/946/golden-retriever-puppy-pomeranian-pet-sitting-nova-scotia-duck-tolling-retriever-golden-retriever-thumb.jpg';
-            // const dogImageElement = document.createElement('img');
-            // dogImageElement.setAttribute('src', dogImageURL);
-            // dogImageElement.setAttribute('class', 'cat-pic');
-            // document.body.insertBefore(dogImageElement, submitButtonElement);
+            showDog();
         }
     
     }
