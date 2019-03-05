@@ -7,19 +7,33 @@
 
     const submitButtonElement = document.getElementById("submit")
 
+    ////// SHOW FISH IMAGE //////
+    const showFish = () => {
+        const fishImageElement = document.querySelector(".fish-img");
+        fishImageElement.setAttribute('style','width: 400px');
+    }
+    /////////////////////////
+
     ////// SHOW CAT IMAGE //////
     const showCat = () => {
         const catImageElement = document.querySelector(".cat-img");
         catImageElement.setAttribute('style','width: 400px');
     }
-    ///////////////////////
+    /////////////////////////
 
-    /////// SHOW DOG IMAGE ///////
+    ////// SHOW DOG IMAGE //////
     const showDog = () => {
         const dogImageElement = document.querySelector(".dog-img");
         dogImageElement.setAttribute('style','width: 400px');
     }
-    ///////////////////////    
+    /////////////////////////
+
+    ////// SHOW PIKA IMAGE //////
+    const showPika = () => {
+        const pikaImageElement = document.querySelector(".pika-img");
+        pikaImageElement.setAttribute('style','width: 400px');
+    }
+    /////////////////////////
 
     const getQuestionsWithScoredChoices = questions => {
         return questions.map((questionChoices, i) => {
@@ -50,14 +64,22 @@
     const determinePetBasedOnScore = (addedScoresForSelectedChoices) => {
         console.log('Your perfect pet is a...');
         let perfectPet;
-        if (addedScoresForSelectedChoices <= 7) {
+        if (addedScoresForSelectedChoices <= 3) {
+            perfectPet = 'Fish';
+            console.log(`${perfectPet}!`);
+            showFish();
+        } else if(addedScoresForSelectedChoices <= 7) {
             perfectPet = 'Cat';
             console.log(`${perfectPet}!`);
             showCat();
-        } else {
+        } else if(addedScoresForSelectedChoices <= 11) {
             perfectPet = 'Dog';
             console.log(`${perfectPet}!`);
             showDog();
+        } else {
+            perfectPet = 'Pikachu';
+            console.log(`${perfectPet}!`);
+            showPika();
         }
     
     }
