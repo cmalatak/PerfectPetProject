@@ -5,35 +5,55 @@
     const questionThreeChoices = Array.from(document.getElementsByName('question-three-choice'));
     const questions = [questionOneChoices, questionTwoChoices, questionThreeChoices];
 
-    const submitButtonElement = document.getElementById("submit")
+    const submitButtonElement = document.getElementById("submit");
 
-    ////// SHOW FISH IMAGE //////
-    const showFish = () => {
-        const fishImageElement = document.querySelector(".fish-img");
-        fishImageElement.setAttribute('style','width: 400px');
-    }
-    /////////////////////////
+    const petImageContainer = document.getElementById("pet-image-container");
 
-    ////// SHOW CAT IMAGE //////
-    const showCat = () => {
-        const catImageElement = document.querySelector(".cat-img");
-        catImageElement.setAttribute('style','width: 400px');
-    }
-    /////////////////////////
+    const fishImageElement = document.createElement('img');
+    fishImageElement.setAttribute('src', 'FishImg.png');
+    fishImageElement.setAttribute('alt', 'Fish Image');
+    fishImageElement.setAttribute('style', 'height:200px');
 
-    ////// SHOW DOG IMAGE //////
-    const showDog = () => {
-        const dogImageElement = document.querySelector(".dog-img");
-        dogImageElement.setAttribute('style','width: 400px');
-    }
-    /////////////////////////
+    const catImageElement = document.createElement('img');
+    catImageElement.setAttribute('src', 'CatImg.png');
+    catImageElement.setAttribute('alt', 'Cat Image');
+    catImageElement.setAttribute('style', 'height:200px');
 
-    ////// SHOW PIKA IMAGE //////
-    const showPika = () => {
-        const pikaImageElement = document.querySelector(".pika-img");
-        pikaImageElement.setAttribute('style','width: 400px');
+    const dogImageElement = document.createElement('img');
+    dogImageElement.setAttribute('src', 'DogImg.png');
+    dogImageElement.setAttribute('alt', 'Dog Image');
+    dogImageElement.setAttribute('style', 'height:200px');
+
+    const pikaImageElement = document.createElement('img');
+    pikaImageElement.setAttribute('src', 'PikaImg.png');
+    pikaImageElement.setAttribute('alt', 'Pikachu Image');
+    pikaImageElement.setAttribute('style', 'height:200px');
+
+    const petData = {
+        dog: {
+            img: dogImageElement,
+            heading: 'You got... Dog!',
+            text: `Dogs like to have fun, and you seem like you're fun!`,
+        },
+        cat: {
+            img: catImageElement,
+            heading: 'You got... Cat!',
+            text: `Cats don't like doing much, and you seem like you don't do much either!`,
+
+        },
+        fish: {
+            img: fishImageElement,
+            heading: 'You got... Fish!',
+            text: `You seem pretty lazy. Good thing fishes are the easiest animal to keep alive!`,
+        },
+        pika: {
+            img: pikaImageElement,
+            heading: 'Pickachu... I choose you!',
+            text: `This Pikachu will keep you company, and keep you in line when you're doin too much!`,
+        },
     }
-    /////////////////////////
+
+///////// SCORING /////////
 
     const getQuestionsWithScoredChoices = questions => {
         return questions.map((questionChoices, i) => {
@@ -61,27 +81,22 @@
         return selectedChoices;
     }
 
-    const determinePetBasedOnScore = (addedScoresForSelectedChoices) => {
+    const determinePetBasedOnScore = (cumulativeScore) => {
         console.log('Your perfect pet is a...');
         let perfectPet;
-        if (addedScoresForSelectedChoices <= 3) {
-            perfectPet = 'Fish';
-            console.log(`${perfectPet}!`);
-            showFish();
-        } else if(addedScoresForSelectedChoices <= 7) {
-            perfectPet = 'Cat';
-            console.log(`${perfectPet}!`);
-            showCat();
-        } else if(addedScoresForSelectedChoices <= 11) {
-            perfectPet = 'Dog';
-            console.log(`${perfectPet}!`);
-            showDog();
+        if (cumulativeScore <= 3) {
+            perfectPet = 'fish';
+        } else if(cumulativeScore <= 7) {
+            perfectPet = 'cat';
+        } else if(cumulativeScore <= 11) {
+            perfectPet = 'dog';
         } else {
-            perfectPet = 'Pikachu';
-            console.log(`${perfectPet}!`);
-            showPika();
+            perfectPet = 'pikachu';
         }
-    
+        petImageContainer.innerHTML= '';
+        petImageContainer.appendChild(petData[perfectPet.heading])
+        petImageContainer.appendChild(petData[perfectPet.img])
+        petImageContainer.appendChild(petData[perfectPet.text])
     }
 
     const addScoresForSelectedChoices = (selectedChoicesWithScores) => {
@@ -94,6 +109,7 @@
         }
         return totalScore;
     }
+    ////////////////////////////
     
     /////// SUBMISSION /////////
 
