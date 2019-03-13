@@ -94,9 +94,10 @@
             perfectPet = 'pikachu';
         }
         petImageContainer.innerHTML= '';
-        petImageContainer.appendChild(petData[perfectPet.heading])
-        petImageContainer.appendChild(petData[perfectPet.img])
-        petImageContainer.appendChild(petData[perfectPet.text])
+        debugger
+        petImageContainer.append(petData[perfectPet.heading]);
+        petImageContainer.append(petData[perfectPet.img]);
+        petImageContainer.append(petData[perfectPet.text]);
     }
 
     const addScoresForSelectedChoices = (selectedChoicesWithScores) => {
