@@ -91,10 +91,9 @@
         } else if(cumulativeScore <= 11) {
             perfectPet = 'dog';
         } else {
-            perfectPet = 'pikachu';
+            perfectPet = 'pika';
         }
         petImageContainer.innerHTML= '';
-        
         petImageContainer.append(petData[perfectPet].heading);
         petImageContainer.append(petData[perfectPet].img);
         petImageContainer.append(petData[perfectPet].text);
