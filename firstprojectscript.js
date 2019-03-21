@@ -12,22 +12,22 @@
     const fishImageElement = document.createElement('img');
     fishImageElement.setAttribute('src', 'FishImg.png');
     fishImageElement.setAttribute('alt', 'Fish Image');
-    fishImageElement.setAttribute('style', 'height:200px');
+    fishImageElement.setAttribute('style', 'height:250px');
 
     const catImageElement = document.createElement('img');
     catImageElement.setAttribute('src', 'CatImg.png');
     catImageElement.setAttribute('alt', 'Cat Image');
-    catImageElement.setAttribute('style', 'height:200px');
+    catImageElement.setAttribute('style', 'height:250px');
 
     const dogImageElement = document.createElement('img');
     dogImageElement.setAttribute('src', 'DogImg.png');
     dogImageElement.setAttribute('alt', 'Dog Image');
-    dogImageElement.setAttribute('style', 'height:200px');
+    dogImageElement.setAttribute('style', 'height:250px');
 
     const pikaImageElement = document.createElement('img');
     pikaImageElement.setAttribute('src', 'PikaImg.png');
     pikaImageElement.setAttribute('alt', 'Pikachu Image');
-    pikaImageElement.setAttribute('style', 'height:200px');
+    pikaImageElement.setAttribute('style', 'height:250px');
 
     const petData = {
         dog: {
