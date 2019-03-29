@@ -19,8 +19,15 @@ p {
     margin: 5px
 }
 
+div.question-inputs > input {
+    margin-left: 15px;
+}
+
 .question-one-images {
     display: block;
+}
+div.question-one-images > img {
+    margin-left: 20px
 }
 
 
