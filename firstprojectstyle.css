@@ -6,6 +6,7 @@ body {
 h1 {
     text-align: center;
     text-decoration: underline;
+    color: green;
     font-size: 40px;
     font-style: italic
 }
@@ -37,4 +38,8 @@ div.question-images > img {
 
 #submit {
     margin: 20px;
+    background-color: green;
+    color: white;
+    width: 100px;
+    height: 25px;
 }
