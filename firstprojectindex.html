@@ -13,51 +13,69 @@
     <form id='unique-pet-quiz'>
     <div class="first-question">
         <h4>Question 1: Which is your favorite weekend activity?</h4>
-        <div class="question-images">
+        <div class="choices">
+            <div class="choice">
             <img src="sleeping.png" alt="Comfortable Bed" style="width:100px;height:50px;">
-            <img src="couch.png" alt="Comfortable Couch" style="width:100px;height:50px;">
-            <img src="crafts.png" alt="Craft Supplies" style="width:100px;height:50px;">
-            <img src="exploring.png" alt="Mountain in Autumn" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-one-choice">Sleeping</label>
         </div>
-        <div class="question-inputs">
-            <input type="radio" name="question-one-choice">Sleeping</input>
-            <input type="radio" name="question-one-choice">Being a Couch Potato</input>
-            <input type="radio" name="question-one-choice">Doing Projects</input>
-            <input type="radio" name="question-one-choice">Exploring</input>
+        <div class="choice">
+            <img src="couch.png" alt="Comfortable Couch" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-one-choice">Being a Couch Potato</label>
+        </div>
+        <div class="choice">
+            <img src="crafts.png" alt="Craft Supplies" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-one-choice">Doing Projects</label>
+        </div>
+        <div class="choice">
+            <img src="exploring.png" alt="Mountain in Autumn" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-one-choice">Exploring</label>
+        </div>
         </div>
     </div>
     <div class="second-question">      
         <h4>Question 2: What is the worst about Mondays?</h4>
-        <div class="question-images">
+        <div class="choices">
+        <div class="choice">
             <img src="clock.png" alt="Alarm Clock" style="width:100px;height:50px;">
-            <img src="leavinghome.png" alt="Person Leaving Home" style="width:100px;height:50px;">
-            <img src="desk.png" alt="Person at Desk" style="width:100px;height:50px;">
-            <img src="bored.png" alt="Bored Person" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-two-choice">Waking up</label>
         </div>
-        <div class="question-inputs">
-            <input type="radio" name="question-two-choice">Waking up</input>
-            <input type="radio" name="question-two-choice">Leaving my home</input>
-            <input type="radio" name="question-two-choice">Sitting at a desk</input>
-            <input type="radio" name="question-two-choice">It's boring</input>
+        <div class="choice">
+            <img src="leavinghome.png" alt="Person Leaving Home" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-two-choice">Leaving my home</label>
+        </div>
+        <div class="choice">
+            <img src="desk.png" alt="Person at Desk" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-two-choice">Sitting at a desk</label>
+        </div>
+        <div class="choice">
+            <img src="bored.png" alt="Bored Person" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-two-choice">It's boring</label>
+        </div>
         </div>
     </div>  
     <div class="third-question">
         <h4>Question 3: What kind of ice cream is best?</h4>
-        <div class="question-images">
+        <div class="choices">
+        <div class="choice">
             <img src="vanilla.png" alt="Vanilla Ice Cream" style="width:100px;height:50px;">
-            <img src="chocolate.png" alt="Chocolate Ice Cream" style="width:100px;height:50px;">
-            <img src="sprinkles.png" alt="Ice Cream with Sprinkles" style="width:100px;height:50px;">
-            <img src="gelato.png" alt="Gelato" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-three-choice">Classic Vanilla</label>
         </div>
-        <div class="question-inputs">
-            <input type="radio" name="question-three-choice">Classic Vanilla</input>
-            <input type="radio" name="question-three-choice">Chocolate</input>
-            <input type="radio" name="question-three-choice">With Sprinkles!</input>
-            <input type="radio" name="question-three-choice">Does gelato count?</input>
+        <div class="choice">
+            <img src="chocolate.png" alt="Chocolate Ice Cream" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-three-choice">Chocolate</label>
+        </div>
+        <div class="choice">
+            <img src="sprinkles.png" alt="Ice Cream with Sprinkles" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-three-choice">With Sprinkles!</label>
+        </div>
+        <div class="choice">
+            <img src="gelato.png" alt="Gelato" style="width:100px;height:50px;">
+            <label><input type="radio" name="question-three-choice">Does gelato count?</label>
+        </div>
         </div>
     </div>
     <div id="pet-image-container"></div>
-        <input type="submit" value="Submit" id="submit" />
+        <label><input type="submit" value="Submit" id="submit" />
     </form>
     <script src="firstprojectscript.js"></script>
 </body>

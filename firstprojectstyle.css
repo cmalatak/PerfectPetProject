@@ -43,3 +43,22 @@ div.question-images > img {
     width: 100px;
     height: 25px;
 }
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+    .choices {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
