@@ -45,6 +45,7 @@ div.question-images > img {
     color: white;
     width: 100px;
     height: 25px;
+    border-radius: 4px;
 }
 
 .choice {

@@ -9,6 +9,13 @@
 
     const petImageContainer = document.getElementById("pet-image-container");
 
+    const callToActionButton = document.createElement("button");
+    callToActionButton.id = 'adopt-button'
+    callToActionButton.innerHTML = "Adopt here!";
+    callToActionButton.type = "button";
+    callToActionButton.setAttribute('onclick', "window.location.href = 'https://adoptapet.com';");
+
+
     const fishImageElement = document.createElement('img');
     fishImageElement.setAttribute('src', 'FishImg.png');
     fishImageElement.setAttribute('alt', 'Fish Image');
@@ -97,6 +104,7 @@
         petImageContainer.append(petData[perfectPet].heading);
         petImageContainer.append(petData[perfectPet].img);
         petImageContainer.append(petData[perfectPet].text);
+        petImageContainer.appendChild(callToActionButton);
     }
 
     const addScoresForSelectedChoices = (selectedChoicesWithScores) => {
