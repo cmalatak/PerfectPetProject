@@ -1,14 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
 body {
     margin-left: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 25px;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
 
+.title-heading {
+    border-right: 1px solid black;
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.sub-heading>div>p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sub-heading-one {
+    font-size: 18px;
+}
+
+.sub-heading-two {
+    font-family: 'Satisfy', cursive;
+    font-size: 24px;
+}
+
+
 h1 {
-    text-align: center;
-    text-decoration: underline;
-    color: green;
-    font-size: 40px;
-    font-style: italic
+    font-family: 'Abril Fatface', cursive;
+    text-align: left;
+    font-size: 60px;
+}
+
+h4 {
+    font-size: 20px;
 }
 
 p {
@@ -37,13 +78,23 @@ div.question-images > img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: xx-large;
 }
 
 #submit {
     margin: 20px;
-    background-color: green;
+    background-color: #d85a5a;
     color: white;
     width: 100px;
+    height: 25px;
+    border-radius: 4px;
+}
+
+#adopt-button {
+    background-color: #d85a5a;
+    color: white;
+    font-size: 14px;
+    width: 125px;
     height: 25px;
     border-radius: 4px;
 }
@@ -58,6 +109,16 @@ div.question-images > img {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly
+}
+
+.pet-heading {
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 0px;
+}
+
+.pet-animal {
+    font-family: 'Satisfy', cursive;
+    margin-top: 10px;
 }
 
 @media screen and (min-width: 600px) {

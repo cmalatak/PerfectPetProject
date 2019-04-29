@@ -39,23 +39,27 @@
     const petData = {
         dog: {
             img: dogImageElement,
-            heading: 'You got... Dog!',
+            heading: 'You got...',
+            animal: 'Dog!',
             text: `Dogs like to have fun, and you seem like you're fun!`,
         },
         cat: {
             img: catImageElement,
-            heading: 'You got... Cat!',
+            heading: 'You got...',
+            animal: 'Cat!',
             text: `Cats don't like doing much, and you seem like you don't do much either!`,
 
         },
         fish: {
             img: fishImageElement,
-            heading: 'You got... Fish!',
+            heading: 'You got...',
+            animal: 'Fish!',
             text: `You seem pretty lazy. Good thing fishes are the easiest animal to keep alive!`,
         },
         pika: {
             img: pikaImageElement,
-            heading: 'Pickachu... I choose you!',
+            heading: 'You got...',
+            animal: 'Pikachu!',
             text: `This Pikachu will keep you company, and keep you in line when you're doin too much!`,
         },
     }
@@ -100,10 +104,23 @@
         } else {
             perfectPet = 'pika';
         }
+        const petHeading = document.createElement('h2');
+        petHeading.className = 'pet-heading';
+        petHeading.innerHTML = petData[perfectPet].heading
+
+        const petAnimal = document.createElement('h2');
+        petAnimal.className = 'pet-animal';
+        petAnimal.innerHTML = petData[perfectPet].animal
+
+        const petText = document.createElement('p');
+        petText.className = 'pet-text';
+        petText.innerHTML = petData[perfectPet].text
+
         petImageContainer.innerHTML= '';
-        petImageContainer.append(petData[perfectPet].heading);
+        petImageContainer.append(petHeading);
+        petImageContainer.append(petAnimal);
         petImageContainer.append(petData[perfectPet].img);
-        petImageContainer.append(petData[perfectPet].text);
+        petImageContainer.append(petText);
         petImageContainer.appendChild(callToActionButton);
     }
 
