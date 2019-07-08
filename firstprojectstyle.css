@@ -9,17 +9,18 @@ body {
 }
 
 .title-heading {
-  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .heading {
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
 .sub-heading {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +57,11 @@ p {
   text-align: center;
 }
 
+label > img {
+  width: 175px;
+  height: auto;
+}
+
 .question-inputs {
   display: block;
   margin: 5px;
@@ -81,12 +87,15 @@ div.question-images > img {
 }
 
 #submit {
-  margin: 20px;
+  display: block;
+  margin: auto;
   background-color: #d85a5a;
   color: white;
-  width: 100px;
-  height: 25px;
+  width: 200px;
+  height: 40px;
   border-radius: 4px;
+  font-size: larger;
+  font-family: "Quattrocento Sans", sans-serif;
   cursor: pointer;
 }
 
@@ -132,9 +141,81 @@ div.question-images > img {
 }
 
 @media screen and (min-width: 600px) {
-  .choices {
+  .title-heading {
+    border-right: 1px solid black;
+    border-bottom: none;
+  }
+
+  .heading {
+    display: flex;
+    width: 100%;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+
+  .sub-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .sub-heading > div > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .sub-heading-one {
+    font-size: 18px;
+  }
+
+  .sub-heading-two {
+    font-family: "Satisfy", cursive;
+    font-size: 24px;
+  }
+
+  label > img {
+    width: 250px;
+    height: auto;
+  }
+
+  #submit {
+    margin: 20px;
+    background-color: #d85a5a;
+    color: white;
+    width: 100px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1175px) {
+  .title-heading {
+    padding-right: 10px;
+  }
+
+  .sub-heading {
+    padding-left: 10px;
+  }
+
+  label > img {
+    width: 275px;
+    height: auto;
+  }
+  .choices {
+    display: flex;
+  }
+
+  #submit {
+    margin: 20px;
+    background-color: #d85a5a;
+    color: white;
+    width: 100px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
   }
 }
 
