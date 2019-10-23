@@ -3,9 +3,10 @@ const app = express();
 const port = 3000;
 const apiClient = require("./apiClient");
 
-app.get("/get-pet/:perfectPet", (req, res) => {
-  const petInfo = apiClient.getPetInfo(req.params.perfectPet);
-  res.send(petInfo);
+app.get("/get-pet/:perfectPet", (request, response) => {
+  apiClient.getPetInfo(request.params.perfectPet, data => {
+    response.send(data);
+  });
 });
 
 app.listen(port, () => {
